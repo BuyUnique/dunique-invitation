@@ -3,3 +3,21 @@
 body {
   font-family: 'Playfair Display Variable', serif;
 }
+
+@theme {
+  --animate-curtain-opening: curtain-opening 3s forwards;
+
+  @keyframes curtain-opening {
+    0% {
+      transform: scaleX(1);
+    }
+
+    25% {
+      transform: scaleX(1);
+    }
+
+    100% {
+      transform: scaleX(0);
+    }
+  }
+}
