@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 
 import weddingImg from '../../assets/images/wedding-1.jpg';
 import curtainWhiteImg from '../../assets/images/curtain-white-compressed.jpg';
-import arrowDownIcon from '../../assets/icons/arrow-down.png';
 import { Header } from '../Header';
 import { WeddingDetails } from '../WeddingDetails';
 
@@ -12,7 +11,7 @@ export const Page: React.FC = () => {
   const [isPageReady, setIsPageReady] = useState(false);
 
   useEffect(() => {
-    const imagestoLoad = [weddingImg, curtainWhiteImg, arrowDownIcon];
+    const imagestoLoad = [weddingImg, curtainWhiteImg];
     let loadedCount = 0;
 
     imagestoLoad.forEach((image) => {
