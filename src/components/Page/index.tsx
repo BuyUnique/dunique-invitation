@@ -40,5 +40,5 @@ export const Page: React.FC = () => {
       <div style={{ backgroundImage: `url(${curtainWhiteImg})` }} className="fixed top-0 right-0 w-[50%] h-dvh bg-cover z-4 animate-curtain-open origin-right" />
       <div style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${weddingImg})` }} className="fixed top-0 left-0 w-full h-dvh bg-cover bg-center z-1" />
     </div>
-  )
+  );
 };
