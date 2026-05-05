@@ -2,14 +2,18 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   font-family: 'Noto Serif Armenian Variable', serif;
+  height: 100%;
+  overflow: hidden;
 }
 
 @theme {
-  --animate-curtain-open: curtain-open 3s forwards;
+  --animate-curtain-open: curtain-open 3s ease-in-out forwards;
   --animate-text-appear: text-appear forwards;
   --animate-arrow-move: arrow-move 2s ease-in-out infinite;
 

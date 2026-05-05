@@ -39,7 +39,7 @@ export const Page: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="overscroll-none h-svh overflow-y-auto [&::-webkit-scrollbar]:w-0">
       <Header />
       <WeddingDetails />
       <div style={{ backgroundImage: `url(${curtainWhiteImg})` }} className="fixed top-0 left-0 w-[50%] h-dvh bg-cover z-4 animate-curtain-open origin-left" />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { clsx } from 'clsx';
 import { hy } from "react-day-picker/locale";
 import { DayPicker, getDefaultClassNames, type DayPickerProps } from "react-day-picker";
 
@@ -30,7 +31,7 @@ export const Calendar: React.FC<DayPickerProps> = ({ ...props }) => {
 
           if (modifiers.selected) {
             return (
-              <td {...tdProps} className={`${tdProps.className} relative`}>
+              <td {...tdProps} className={clsx(`${tdProps.className} relative`)}>
                 {tdProps.children}
                 <img
                   src={ringImg}

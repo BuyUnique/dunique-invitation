@@ -1,1 +1,5 @@
-export const WEDDING_DATE_SECTION_ID = "wedding-date";
+export const SECTION_IDS = {
+  WEDDING_DATE: "wedding-date",
+  WEDDING_PROGRAM: "wedding-program",
+  DRESS_CODE: "dress-code",
+} as const;
