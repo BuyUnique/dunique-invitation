@@ -1,27 +1,45 @@
-import React from 'react';
+import React, { useRef, useCallback } from 'react';
 
 import flowerWhiteImg from '../../assets/images/flower-white.png';
 import weddingDressImg from '../../assets/images/wedding-dress.png';
 import ringImg from '../../assets/images/ring.png';
 import champagneGlassesImg from '../../assets/images/champagne-glasses.png';
-import { SECTION_IDS } from '../../constants/sectionIds';
 import { Calendar } from '../Calendar';
 import { ArrowDown } from '../ArrowDown';
 import { InfoMessage } from '../InfoMessage';
 
-export const WeddingDetails: React.FC = () => {
+interface Props {
+  weddingDateSectionRef: React.RefObject<HTMLDivElement | null>;
+}
+
+export const WeddingDetails: React.FC<Props> = ({ weddingDateSectionRef }) => {
+  const weddingProgramSectionRef = useRef<HTMLDivElement>(null);
+  const dressCodeSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollToWeddingProgramSectionClick = useCallback(() => {
+    if (weddingProgramSectionRef.current) {
+      weddingProgramSectionRef.current.scrollIntoView();
+    }
+  }, [weddingProgramSectionRef]);
+
+  const handleScrollToDressCodeSectionClick = useCallback(() => {
+    if (dressCodeSectionRef.current) {
+      dressCodeSectionRef.current.scrollIntoView();
+    }
+  }, [dressCodeSectionRef]);
+
   const weddingDate = new Date(2026, 5, 21);
 
   return (
     <div className="relative inset-0 after:absolute after:content-[''] after:inset-0 after:bg-black/50 after:rounded-tl-4xl after:rounded-tr-4xl z-2">
       <div className="relative z-3 p-[80px_30px] max-[500px]:p-[60px_20px]">
-        <div id={SECTION_IDS.WEDDING_DATE} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
+        <div ref={weddingDateSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
           <h2 className="max-w-100 text-[42px] font-medium italic text-center text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[970px]:max-w-75 max-[770px]:text-[28px] max-[770px]:max-w-65 max-[500px]:mb-17">Սիրելի՛ ընկերներ և հարազատներ</h2>
-          <ArrowDown href={`#${SECTION_IDS.WEDDING_PROGRAM}`} className="mb-22 max-[500px]:mb-17" />
+          <ArrowDown className="mb-22 max-[500px]:mb-17" onClick={handleScrollToWeddingProgramSectionClick} />
           <Calendar selected={weddingDate} month={weddingDate} className="mb-22 max-[500px]:mb-17" />
           <img src={flowerWhiteImg} alt="Flower" className="size-20 object-contain" />
         </div>
-        <div id={SECTION_IDS.WEDDING_PROGRAM} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
+        <div ref={weddingProgramSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
           <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[770px]:text-[28px] max-[500px]:mb-17">Օրվա ծրագիրը</h2>
           <div className="w-full flex flex-wrap justify-center gap-16 mb-22 max-[500px]:mb-17">
             <div className="max-w-87.5 min-w-50 flex flex-1/3 flex-col items-center gap-2">
@@ -49,9 +67,9 @@ export const WeddingDetails: React.FC = () => {
             </div>
           </div>
           <InfoMessage className="mb-22 max-[500px]:mb-17" message="Փոքրիկ հյուրերին խնդրում ենք մինչև ժամը 22:30 մնալ ներքևի սրահում՝ անվտանգության նկատառումներից ելնելով: Մենք հոգ ենք տարել մեր փոքրիկ հյուրերի հանգստի մասին․ ներքևի հատուկ սրահում նրանց սպասվում է հետաքրքիր ժամանցային ծրագիր։" />
-          <ArrowDown href={`#${SECTION_IDS.DRESS_CODE}`} />
+          <ArrowDown onClick={handleScrollToDressCodeSectionClick} />
         </div>
-        <div id={SECTION_IDS.DRESS_CODE} className="flex flex-col items-center">
+        <div ref={dressCodeSectionRef} className="flex flex-col items-center">
           <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-8 max-[970px]:text-[32px] max-[770px]:text-[28px]">Դրեսս կոդ</h2>
           <InfoMessage message="Հանդիսավոր հագուստ: Կանանց համար երեկոյան հագուստ։ Տղամարդկանց համար փողկապը պարտադիր չէ։ Խնդրում ենք ընտրել հագուստ՝ բացառելով սպիտակի և բուրգունդիի երանգները։" />
         </div>
