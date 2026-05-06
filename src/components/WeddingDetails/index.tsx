@@ -13,16 +13,16 @@ export const WeddingDetails: React.FC = () => {
   const weddingDate = new Date(2026, 5, 21);
 
   return (
-    <div className="relative inset-0 after:absolute after:content-[''] after:inset-0 after:bg-black/40 after:rounded-tl-4xl after:rounded-tr-4xl z-2">
+    <div className="relative inset-0 after:absolute after:content-[''] after:inset-0 after:bg-black/50 after:rounded-tl-4xl after:rounded-tr-4xl z-2">
       <div className="relative z-3 p-[80px_30px] max-[500px]:p-[60px_20px]">
         <div id={SECTION_IDS.WEDDING_DATE} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
-          <h2 className="max-w-100 text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[970px]:max-w-75 max-[770px]:text-[28px] max-[770px]:max-w-65 max-[500px]:mb-17 max-[400px]:text-[22px] max-[400px]:max-w-51.25">Սիրելի՛ ընկերներ և հարազատներ</h2>
+          <h2 className="max-w-100 text-[42px] font-medium italic text-center text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[970px]:max-w-75 max-[770px]:text-[28px] max-[770px]:max-w-65 max-[500px]:mb-17">Սիրելի՛ ընկերներ և հարազատներ</h2>
           <ArrowDown href={`#${SECTION_IDS.WEDDING_PROGRAM}`} className="mb-22 max-[500px]:mb-17" />
           <Calendar selected={weddingDate} month={weddingDate} className="mb-22 max-[500px]:mb-17" />
-          <img src={flowerWhiteImg} alt="Flower" className="size-25 object-contain" />
+          <img src={flowerWhiteImg} alt="Flower" className="size-20 object-contain" />
         </div>
         <div id={SECTION_IDS.WEDDING_PROGRAM} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
-          <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[770px]:text-[28px] max-[500px]:mb-17 max-[400px]:text-[22px]">Օրվա ծրագիրը</h2>
+          <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[770px]:text-[28px] max-[500px]:mb-17">Օրվա ծրագիրը</h2>
           <div className="w-full flex flex-wrap justify-center gap-16 mb-22 max-[500px]:mb-17">
             <div className="max-w-87.5 min-w-50 flex flex-1/3 flex-col items-center gap-2">
               <img src={weddingDressImg} alt="Wedding Dress" className="size-25 object-contain" />
@@ -52,7 +52,7 @@ export const WeddingDetails: React.FC = () => {
           <ArrowDown href={`#${SECTION_IDS.DRESS_CODE}`} />
         </div>
         <div id={SECTION_IDS.DRESS_CODE} className="flex flex-col items-center">
-          <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-8 max-[970px]:text-[32px] max-[770px]:text-[28px] max-[400px]:text-[22px]">Դրեսս կոդ</h2>
+          <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-8 max-[970px]:text-[32px] max-[770px]:text-[28px]">Դրեսս կոդ</h2>
           <InfoMessage message="Հանդիսավոր հագուստ: Կանանց համար երեկոյան հագուստ։ Տղամարդկանց համար փողկապը պարտադիր չէ։ Խնդրում ենք ընտրել հագուստ՝ բացառելով սպիտակի և բուրգունդիի երանգները։" />
         </div>
       </div>
