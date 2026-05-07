@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { clsx } from 'clsx';
 import { hy } from "react-day-picker/locale";
 import { DayPicker, getDefaultClassNames, type DayPickerProps } from "react-day-picker";
 
-import ringImg from '../../assets/images/ring-compressed.png';
+import ringImg from '../../../../assets/images/ring-compressed.png';
 
-export const Calendar: React.FC<DayPickerProps> = ({ ...props }) => {
+const Component: React.FC<DayPickerProps> = ({ ...props }) => {
   const defaultClassNames = getDefaultClassNames();
 
   return (
@@ -14,8 +14,8 @@ export const Calendar: React.FC<DayPickerProps> = ({ ...props }) => {
         root: `${defaultClassNames.root} max-[368px]:w-[294px]`,
         today: 'border-2 border-white',
         selected: '',
-        month_caption: `${defaultClassNames.caption_label} block! text-[48px] font-bold text-white text-center mb-[22px] max-[450px]:text-[32px] max-[450px]:mb-[18px]`,
-        weekday: `${defaultClassNames.weekday} text-[18px]! text-white max-[450px]:text-[14px]!`,
+        month_caption: `${defaultClassNames.caption_label} block! text-[48px] font-bold text-white text-shadow-1 text-center mb-[22px] max-[450px]:text-[32px] max-[450px]:mb-[18px]`,
+        weekday: `${defaultClassNames.weekday} text-[18px]! text-white text-shadow-1 max-[450px]:text-[14px]!`,
         day: `${defaultClassNames.day} text-[24px] text-white max-[450px]:text-[18px]`,
       }}
       hideNavigation
@@ -55,3 +55,5 @@ export const Calendar: React.FC<DayPickerProps> = ({ ...props }) => {
     />
   );
 };
+
+export const Calendar = memo(Component);

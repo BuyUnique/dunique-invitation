@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { ArrowDown } from '../ArrowDown';
 
@@ -6,7 +6,7 @@ interface Props {
   onScrollToSectionClick: () => void;
 }
 
-export const Header: React.FC<Props> = ({ onScrollToSectionClick }) => {
+const Component: React.FC<Props> = ({ onScrollToSectionClick }) => {
   return (
     <header className="relative w-full h-dvh flex flex-col justify-center items-center z-3">
       <h1 className="text-[100px] font-bold italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] max-[970px]:text-[80px] max-[770px]:text-[60px] max-[580px]:text-[40px] max-[400px]:text-[30px]">Ֆելիքս և Ամալյա</h1>
@@ -15,3 +15,5 @@ export const Header: React.FC<Props> = ({ onScrollToSectionClick }) => {
     </header>
   );
 };
+
+export const Header = memo(Component);
