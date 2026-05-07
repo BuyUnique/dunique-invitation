@@ -14,7 +14,7 @@ const Component: React.FC<DayPickerProps> = ({ ...props }) => {
         root: `${defaultClassNames.root} max-[368px]:w-[294px]`,
         today: 'border-2 border-white',
         selected: '',
-        month_caption: `${defaultClassNames.caption_label} block! text-[48px] font-bold text-white text-shadow-1 text-center mb-[22px] max-[450px]:text-[32px] max-[450px]:mb-[18px]`,
+        month_caption: `${defaultClassNames.caption_label} block! text-[38px] font-bold text-white text-shadow-1 text-center mb-[22px] max-[970px]:text-[28px] max-[450px]:mb-[18px]`,
         weekday: `${defaultClassNames.weekday} text-[18px]! text-white text-shadow-1 max-[450px]:text-[14px]!`,
         day: `${defaultClassNames.day} text-[24px] text-white max-[450px]:text-[18px]`,
       }}
