@@ -9,13 +9,18 @@ body {
   font-family: 'Noto Serif Armenian Variable', serif;
 }
 
+@layer base {
+  button {
+    cursor: pointer;
+  }
+}
+
 @utility scroll-touch {
   -webkit-overflow-scrolling: touch;
 }
 
 @theme {
   --animate-curtain-open: curtain-open ease-in-out 3s forwards;
-  --animate-text-appear: text-appear forwards;
   --animate-arrow-move: arrow-move 2s ease-in-out infinite;
 
   @keyframes curtain-open {
@@ -29,20 +34,6 @@ body {
 
     100% {
       transform: scaleX(0);
-    }
-  }
-
-  @keyframes text-appear {
-    0% {
-      transform: scaleY(0);
-    }
-
-    80% {
-      transform: scaleY(0);
-    }
-
-    100% {
-      transform: scaleY(1);
     }
   }
 
