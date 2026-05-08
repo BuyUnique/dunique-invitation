@@ -1,7 +1,7 @@
 import React, { useRef, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
 
-import flowerWhiteImg from '../../assets/images/flower-white.png';
+import heartsWhiteImg from '../../assets/images/hearts-white.png';
 import weddingDressImg from '../../assets/images/wedding-dress.png';
 import ringImg from '../../assets/images/ring.png';
 import champagneGlassesImg from '../../assets/images/champagne-glasses.png';
@@ -13,7 +13,7 @@ import { Calendar } from './components/Calendar';
 import { InfoMessage } from './components/InfoMessage';
 
 const WEDDING_DATE = new Date(2026, 5, 21);
-const FLOWER_WHITE_CLASS_NAME = "size-20 object-contain";
+const HEARTS_WHITE_CLASS_NAME = "w-[140px] object-contain z-2";
 
 interface Props {
   weddingDateSectionRef: React.RefObject<HTMLDivElement | null>;
@@ -44,13 +44,13 @@ const Component: React.FC<Props> = ({ weddingDateSectionRef }) => {
   }, [countdownSectionRef]);
 
   return (
-    <div className="relative inset-0 after:absolute after:content-[''] after:inset-0 after:bg-black/50 after:rounded-tl-4xl after:rounded-tr-4xl z-2">
-      <div className="relative z-3 p-[80px_30px] max-[500px]:p-[60px_20px]">
+    <div className="relative inset-0 after:absolute after:content-[''] after:inset-0 after:bg-black/50 after:rounded-tl-4xl after:rounded-tr-4xl z-1">
+      <div className="relative z-2 p-[80px_30px_40px_30px] max-[500px]:p-[60px_20px_30px_20px]">
         <div ref={weddingDateSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
           <h2 className="max-w-100 text-[42px] font-medium italic text-center text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[970px]:max-w-75 max-[770px]:text-[28px] max-[770px]:max-w-65 max-[500px]:mb-17">Սիրելի՛ ընկերներ և հարազատներ</h2>
           <ArrowDown className="mb-22 max-[500px]:mb-17" onClick={handleScrollToWeddingProgramSectionClick} />
           <Calendar selected={WEDDING_DATE} month={WEDDING_DATE} className="mb-22 max-[500px]:mb-17" />
-          <img src={flowerWhiteImg} alt="Flower" className={FLOWER_WHITE_CLASS_NAME} />
+          <img src={heartsWhiteImg} alt="Hearts" className={HEARTS_WHITE_CLASS_NAME} />
         </div>
         <div ref={weddingProgramSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
           <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[770px]:text-[28px] max-[500px]:mb-17">Օրվա ծրագիրը</h2>
@@ -85,12 +85,12 @@ const Component: React.FC<Props> = ({ weddingDateSectionRef }) => {
         <div ref={dressCodeSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
           <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-8 max-[970px]:text-[32px] max-[770px]:text-[28px]">Դրես կոդ</h2>
           <InfoMessage className="mb-22 max-[500px]:mb-17" message="Հանդիսավոր հագուստ: Կանանց համար երեկոյան հագուստ։ Տղամարդկանց համար փողկապը պարտադիր չէ։ Խնդրում ենք ընտրել հագուստ՝ բացառելով սպիտակի և բուրգունդիի երանգները։" />
-          <img src={flowerWhiteImg} alt="Flower" className={clsx(FLOWER_WHITE_CLASS_NAME, 'mb-22 max-[500px]:mb-17')} />
+          <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-22 max-[500px]:mb-17')} />
           <ArrowDown onClick={handleScrollToCountdownSectionClick} />
         </div>
         <div ref={countdownSectionRef} className="flex flex-col items-center">
           <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-17 max-[970px]:text-[32px] max-[770px]:text-[28px]">Մինչ հանդիպու՜մ</h2>
-          <img src={flowerWhiteImg} alt="Flower" className={clsx(FLOWER_WHITE_CLASS_NAME, 'mb-22 max-[500px]:mb-17')} />
+          <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-22 max-[500px]:mb-17')} />
           <p className="text-[28px] font-medium text-center text-white text-shadow-1 mb-9.5 max-[970px]:text-[22px] max-[770px]:text-[20px]">Մինչ մեր հարսանիքը մնացել է</p>
           <div className="flex flex-wrap justify-center gap-4 max-[770px]:gap-1.5 mb-22 max-[500px]:mb-17">
             {Object.keys(countdown).map(timePart => {
@@ -117,7 +117,7 @@ const Component: React.FC<Props> = ({ weddingDateSectionRef }) => {
               );
             })}
           </div>
-          <img src={flowerWhiteImg} alt="Flower" className={FLOWER_WHITE_CLASS_NAME} />
+          <img src={heartsWhiteImg} alt="Hearts" className={HEARTS_WHITE_CLASS_NAME} />
         </div>
       </div>
     </div>

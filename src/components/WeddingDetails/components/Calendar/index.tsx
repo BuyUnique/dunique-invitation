@@ -36,7 +36,7 @@ const Component: React.FC<DayPickerProps> = ({ ...props }) => {
                 <img
                   src={ringImg}
                   alt="Ring"
-                  className="absolute -top-1.5 -left-px object-contain z-3 animate-pulse max-[450px]:-top-0.5 max-[450px]:-left-px max-[450px]:size-full max-[368px]:left-0"
+                  className="absolute -top-1.5 -left-px object-contain z-2 animate-pulse max-[450px]:-top-0.5 max-[450px]:-left-px max-[450px]:size-full max-[368px]:left-0"
                 />
               </td>
             );
