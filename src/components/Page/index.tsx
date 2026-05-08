@@ -6,6 +6,7 @@ import weddingImg from '../../assets/images/wedding-1.jpg';
 import curtainWhiteImg from '../../assets/images/curtain-white-compressed.jpg';
 import { Header } from '../Header';
 import { WeddingDetails } from '../WeddingDetails';
+import { Footer } from '../Footer';
 
 export const Page: React.FC = () => {
   const [isPageReady, setIsPageReady] = useState(false);
@@ -48,9 +49,12 @@ export const Page: React.FC = () => {
   return (
     <div style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${weddingImg})` }} className="h-dvh bg-cover bg-center overflow-y-auto scroll-smooth scroll-touch">
       <Header onScrollToSectionClick={handleScrollToSectionClick} />
-      <WeddingDetails weddingDateSectionRef={weddingDateSectionRef}  />
-      <div style={{ backgroundImage: `url(${curtainWhiteImg})` }} className="fixed top-0 left-0 w-[50%] h-dvh bg-cover z-4 animate-curtain-open origin-left" />
-      <div style={{ backgroundImage: `url(${curtainWhiteImg})` }} className="fixed top-0 right-0 w-[50%] h-dvh bg-cover z-4 animate-curtain-open origin-right" />
+      <div className="relative z-1 after:absolute after:content-[''] after:inset-0 after:bg-black/50 after:rounded-tl-4xl after:rounded-tr-4xl">
+        <WeddingDetails weddingDateSectionRef={weddingDateSectionRef}  />
+        <Footer />
+      </div>
+      <div style={{ backgroundImage: `url(${curtainWhiteImg})` }} className="fixed top-0 left-0 w-[50%] h-dvh bg-cover z-3 animate-curtain-open origin-left" />
+      <div style={{ backgroundImage: `url(${curtainWhiteImg})` }} className="fixed top-0 right-0 w-[50%] h-dvh bg-cover z-3 animate-curtain-open origin-right" />
     </div>
   );
 };
