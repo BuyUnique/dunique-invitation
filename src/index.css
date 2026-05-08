@@ -14,7 +14,7 @@ body {
 }
 
 @theme {
-  --animate-curtain-open: curtain-open 3s forwards;
+  --animate-curtain-open: curtain-open ease-in-out 3s forwards;
   --animate-text-appear: text-appear forwards;
   --animate-arrow-move: arrow-move 2s ease-in-out infinite;
 
