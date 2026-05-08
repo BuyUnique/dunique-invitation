@@ -13,7 +13,7 @@ import { Calendar } from './components/Calendar';
 import { InfoMessage } from './components/InfoMessage';
 
 const WEDDING_DATE = new Date(2026, 5, 21);
-const HEARTS_WHITE_CLASS_NAME = "w-[140px] object-contain z-2";
+const HEARTS_WHITE_CLASS_NAME = "w-[160px] object-contain";
 
 interface Props {
   weddingDateSectionRef: React.RefObject<HTMLDivElement | null>;
@@ -45,10 +45,10 @@ const Component: React.FC<Props> = ({ weddingDateSectionRef }) => {
 
   return (
     <div className="relative z-2 p-[80px_30px_40px_30px] max-[500px]:p-[60px_20px_30px_20px]">
-      <div ref={weddingDateSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
+      <div ref={weddingDateSectionRef} className="flex flex-col items-center mb-19 max-[500px]:mb-14">
         <h2 className="max-w-100 text-[42px] font-medium italic text-center text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-22 max-[970px]:text-[32px] max-[970px]:max-w-75 max-[770px]:text-[28px] max-[770px]:max-w-65 max-[500px]:mb-17">Սիրելի՛ ընկերներ և հարազատներ</h2>
         <ArrowDown className="mb-22 max-[500px]:mb-17" onClick={handleScrollToWeddingProgramSectionClick} />
-        <Calendar selected={WEDDING_DATE} month={WEDDING_DATE} className="mb-22 max-[500px]:mb-17" />
+        <Calendar selected={WEDDING_DATE} month={WEDDING_DATE} className="mb-19 max-[500px]:mb-14" />
         <img src={heartsWhiteImg} alt="Hearts" className={HEARTS_WHITE_CLASS_NAME} />
       </div>
       <div ref={weddingProgramSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
@@ -83,15 +83,15 @@ const Component: React.FC<Props> = ({ weddingDateSectionRef }) => {
       </div>
       <div ref={dressCodeSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
         <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-8 max-[970px]:text-[32px] max-[770px]:text-[28px]">Դրես կոդ</h2>
-        <InfoMessage className="mb-22 max-[500px]:mb-17" message="Հանդիսավոր հագուստ: Կանանց համար երեկոյան հագուստ։ Տղամարդկանց համար փողկապը պարտադիր չէ։ Խնդրում ենք ընտրել հագուստ՝ բացառելով սպիտակի և բուրգունդիի երանգները։" />
-        <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-22 max-[500px]:mb-17')} />
+        <InfoMessage className="mb-23 max-[500px]:mb-18" message="Հանդիսավոր հագուստ: Կանանց համար երեկոյան հագուստ։ Տղամարդկանց համար փողկապը պարտադիր չէ։ Խնդրում ենք ընտրել հագուստ՝ բացառելով սպիտակի և բուրգունդիի երանգները։" />
+        <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-19 max-[500px]:mb-14')} />
         <ArrowDown onClick={handleScrollToCountdownSectionClick} />
       </div>
       <div ref={countdownSectionRef} className="flex flex-col items-center">
-        <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-17 max-[970px]:text-[32px] max-[770px]:text-[28px]">Մինչ հանդիպու՜մ</h2>
-        <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-22 max-[500px]:mb-17')} />
+        <h2 className="text-[42px] font-medium italic text-white text-shadow-1 animate-text-appear [animation-duration:4s] mb-16 max-[970px]:text-[32px] max-[770px]:text-[28px]">Մինչ հանդիպու՜մ</h2>
+        <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-19 max-[500px]:mb-14')} />
         <p className="text-[28px] font-medium text-center text-white text-shadow-1 mb-9.5 max-[970px]:text-[22px] max-[770px]:text-[20px]">Մինչ մեր հարսանիքը մնացել է</p>
-        <div className="flex flex-wrap justify-center gap-4 max-[770px]:gap-1.5 mb-22 max-[500px]:mb-17">
+        <div className="flex flex-wrap justify-center gap-4 max-[770px]:gap-1.5 mb-23 max-[500px]:mb-18">
           {Object.keys(countdown).map(timePart => {
             const typedTimePart = timePart as keyof TimeParts;
 
