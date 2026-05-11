@@ -48,22 +48,23 @@ const Component: React.FC<Props> = ({ weddingDateSectionRef }) => {
     <div className="relative z-2 p-[80px_30px_40px_30px] max-[500px]:p-[60px_20px_30px_20px]">
       <div ref={weddingDateSectionRef} className="flex flex-col items-center mb-19 max-[500px]:mb-14">
         <motion.h2
-          className="max-w-100 text-[42px] font-medium italic text-center text-white text-shadow-1 mb-22 max-[970px]:text-[32px] max-[970px]:max-w-75 max-[770px]:text-[28px] max-[770px]:max-w-65 max-[500px]:mb-17"
+          className="max-w-200 text-[42px] font-medium italic text-center text-white text-shadow-1 mb-22 max-[970px]:text-[32px] max-[970px]:max-w-150 max-[770px]:text-[28px] max-[770px]:max-w-130 max-[500px]:mb-17"
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
           viewport={{ once: true, amount: 'all' }}
         >
-          Սիրելի՛ ընկերներ և հարազատներ
+          Սիրելի՛ ընկերներ և հարազատներ, սիրով հրավիրում ենք մեր հարսանեկան արարողությանը
         </motion.h2>
         <ArrowDown className="mb-22 max-[500px]:mb-17" onClick={handleScrollToWeddingProgramSectionClick} />
         <motion.div
+          className="mb-19 max-[500px]:mb-14"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 'some' }}
+          viewport={{ once: true, amount: 0.7 }}
         >
-          <Calendar selected={WEDDING_DATE} month={WEDDING_DATE} className="mb-19 max-[500px]:mb-14" />
+          <Calendar selected={WEDDING_DATE} month={WEDDING_DATE} />
         </motion.div>
         <img src={heartsWhiteImg} alt="Hearts" className={HEARTS_WHITE_CLASS_NAME} />
       </div>

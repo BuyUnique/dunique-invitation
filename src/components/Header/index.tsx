@@ -66,7 +66,7 @@ const Component: React.FC<Props> = ({ onScrollToSectionClick }) => {
       </motion.button>
       <motion.h1
         className="text-[100px] font-bold italic text-center text-white text-shadow-1 max-[970px]:text-[80px] max-[770px]:text-[60px] max-[580px]:text-[40px] max-[400px]:text-[30px]"
-        initial={{ opacity: 0, y: -40 }}
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 3, ease: 'easeOut' }}
         viewport={{ once: true, amount: 'all' }}
@@ -75,7 +75,7 @@ const Component: React.FC<Props> = ({ onScrollToSectionClick }) => {
       </motion.h1>
       <motion.p
         className="text-[70px] font-medium text-center text-white text-shadow-1 max-[970px]:text-[50px] max-[770px]:text-[40px] max-[580px]:text-[25px] max-[400px]:text-[20px]"
-        initial={{ opacity: 0, y: -40 }}
+        initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 3.5, ease: 'easeOut' }}
         viewport={{ once: true, amount: 'all' }}

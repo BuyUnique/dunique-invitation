@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 import weddingImg from '../../assets/images/wedding-1.jpg';
 import curtainWhiteImg from '../../assets/images/curtain-white-compressed.jpg';
+import playIcon from '../../assets/icons/play.png';
+import pauseIcon from '../../assets/icons/pause.png';
 import { Header } from '../Header';
 import { WeddingDetails } from '../WeddingDetails';
 import { Footer } from '../Footer';
@@ -19,7 +21,7 @@ export const Page: React.FC = () => {
 
     window.scrollTo(0, 0);
 
-    const imagestoLoad = [weddingImg, curtainWhiteImg];
+    const imagestoLoad = [weddingImg, curtainWhiteImg, playIcon, pauseIcon];
     let loadedCount = 0;
 
     imagestoLoad.forEach((image) => {
