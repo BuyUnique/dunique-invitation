@@ -1,29 +1,29 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import playIcon from '../../assets/icons/play.png';
 import pauseIcon from '../../assets/icons/pause.png';
-import weddingSong from '../../assets/audios/Bruno Mars - Merry You.mp3';
 import { ArrowDown } from '../ArrowDown';
-
-const audio = new Audio(weddingSong);
+import { type WeddingData } from '../../types/models';
 
 interface Props {
+  data: WeddingData;
   onScrollToSectionClick: () => void;
 }
 
-const Component: React.FC<Props> = ({ onScrollToSectionClick }) => {
+const Component: React.FC<Props> = ({ data, onScrollToSectionClick }) => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const audioRef = useRef(new Audio(data.song));
 
   const handleAudioToggleClick = useCallback(async () => {
-    if (audio.paused) {
-      await audio.play();
+    if (audioRef.current.paused) {
+      await audioRef.current.play();
 
       setIsAudioPlaying(true);
     } else {
-      audio.pause();
+      audioRef.current.pause();
 
-      audio.currentTime = 0;
+      audioRef.current.currentTime = 0;
 
       setIsAudioPlaying(false);
     }
@@ -71,7 +71,7 @@ const Component: React.FC<Props> = ({ onScrollToSectionClick }) => {
         transition={{ duration: 0.5, delay: 3, ease: 'easeOut' }}
         viewport={{ once: true, amount: 'all' }}
       >
-        Ֆելիքս և Ամալյա
+        {data.title}
       </motion.h1>
       <motion.p
         className="text-[70px] font-medium text-center text-white text-shadow-1 max-[970px]:text-[50px] max-[770px]:text-[40px] max-[580px]:text-[25px] max-[400px]:text-[20px]"
@@ -80,7 +80,7 @@ const Component: React.FC<Props> = ({ onScrollToSectionClick }) => {
         transition={{ duration: 0.5, delay: 3.5, ease: 'easeOut' }}
         viewport={{ once: true, amount: 'all' }}
       >
-        21 Հունիս 2026
+        {data.weddingDateText}
       </motion.p>
       <ArrowDown className="absolute bottom-7.5 z-1" onClick={onScrollToSectionClick} />
     </header>
