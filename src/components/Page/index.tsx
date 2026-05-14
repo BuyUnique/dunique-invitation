@@ -1,6 +1,6 @@
 import '@fontsource-variable/noto-serif-armenian/wght.css';
 import "react-day-picker/style.css";
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
 
 import weddingImg from '../../assets/images/wedding-1.jpg';
 import curtainWhiteImg from '../../assets/images/curtain-white-compressed.jpg';
@@ -10,7 +10,7 @@ import { Header } from '../Header';
 import { WeddingDetails } from '../WeddingDetails';
 import { Footer } from '../Footer';
 
-export const Page: React.FC = () => {
+const Component: React.FC = () => {
   const [isPageReady, setIsPageReady] = useState(false);
   const weddingDateSectionRef = useRef<HTMLDivElement>(null);
 
@@ -60,3 +60,5 @@ export const Page: React.FC = () => {
     </div>
   );
 };
+
+export const Page = memo(Component);
