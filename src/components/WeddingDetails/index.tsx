@@ -122,7 +122,7 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
             );
           })}
         </div>
-        <InfoMessage className="mb-22 max-[500px]:mb-17" message={data.infoMessage} />
+        {data.infoMessage && <InfoMessage className="mb-22 max-[500px]:mb-17" message={data.infoMessage} />}
         <ArrowDown onClick={handleScrollToDressCodeSectionClick} />
       </div>
       <div ref={dressCodeSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">

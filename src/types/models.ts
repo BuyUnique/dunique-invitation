@@ -19,7 +19,7 @@ export interface WeddingData {
     locationText: string;
     location: string;
   }[];
-  infoMessage: string;
+  infoMessage?: string;
   dressCodeMessage: string;
   phoneNumbers: string[];
 }
