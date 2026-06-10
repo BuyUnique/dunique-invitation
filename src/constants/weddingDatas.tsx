@@ -1,12 +1,12 @@
 import { type WeddingData } from '../types/models';
 
-import IshxanAndSvetlana from '../assets/images/IshxanAndSvetlana.jpg'
+import Ishxan from '../assets/images/Ishxan.jpg'
 import brunoMarsSong from '../assets/audios/Bruno Mars - Merry You.mp3';
 
 export const WEDDING_DATAS: WeddingData[] = [
   {
     id: 'IshxanAndSvetlana',
-    img: IshxanAndSvetlana,
+    img: Ishxan,
     song: brunoMarsSong,
     title: 'Իշխան և Սվետլանա',
     weddingDateText: '07 Հուլիս 2026',
