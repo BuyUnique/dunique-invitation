@@ -1,16 +1,16 @@
 import { type WeddingData } from '../types/models';
 
-import felixAndAmalyaImg from '../assets/images/wedding-1.jpg';
+import IshxanAndSvetlana from '../assets/images/IshxanAndSvetlana.jpg'
 import brunoMarsSong from '../assets/audios/Bruno Mars - Merry You.mp3';
 
 export const WEDDING_DATAS: WeddingData[] = [
   {
     id: 'IshxanAndSvetlana',
-    img: felixAndAmalyaImg,
+    img: 'IshxanAndSvetlana',
     song: brunoMarsSong,
     title: 'Իշխան և Սվետլանա',
     weddingDateText: '07 Հուլիս 2026',
-    weddingDate: new Date(2026, 7, 7),
+    weddingDate: new Date(2026, 6, 7),
     programEvents: [
       {
         name: 'brideHouse',
@@ -34,7 +34,7 @@ export const WEDDING_DATAS: WeddingData[] = [
       },
     ],
     infoMessage: 'Սիրով սպասում ենք ձեզ ',
-    dressCodeMessage: '',
+    dressCodeMessage: 'Հանդիսավոր հագուստ առանց սահմանափակումների',
     phoneNumbers: ['098 390509'],
   },
 ];
