@@ -117,7 +117,7 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
                 </motion.p>
                 {event.place && <p className="text-[22px] text-center text-white text-shadow-1 max-[770px]:text-[20px]">{event.place}</p>}
                 <p className="text-[22px] text-center  text-white text-shadow-1 max-[770px]:text-[20px]">{event.locationText}</p>
-                <a href={event.location} target="_blank" rel="noopener noreferrer" className="text-[18px] bg-amber-400 text-white rounded-3xl transition-all mt-2 p-[6px_18px] hover:bg-white hover:text-black">Ինչպես գնալ</a>
+                <a href={event.location} target="_blank" rel="noopener noreferrer" className="text-[18px] bg-green-600 text-white rounded-3xl transition-all mt-2 p-[6px_18px] hover:bg-white hover:text-black">Ինչպես գնալ</a>
               </div>
             );
           })}
