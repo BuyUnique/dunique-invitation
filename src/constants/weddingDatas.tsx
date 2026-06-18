@@ -1,40 +1,40 @@
 import { type WeddingData } from '../types/models';
 
-import Ishxan from '../assets/images/Ishxan.jpg'
+import KaroAndQristine from '../assets/images/KaroAndQristine.jpg';
 import brunoMarsSong from '../assets/audios/Bruno Mars - Merry You.mp3';
 
 export const WEDDING_DATAS: WeddingData[] = [
   {
-    id: 'IshxanAndSvetlana',
-    img: Ishxan,
+    id: 'KaroAndQristine',
+    img: KaroAndQristine,
     song: brunoMarsSong,
-    title: 'Իշխան և Սվետլանա',
-    weddingDateText: '07 Հուլիս 2026',
-    weddingDate: new Date(2026, 6, 7),
+    title: 'Կարո և Քրիստինե',
+    weddingDateText: '19 Հուլիս 2026',
+    weddingDate: new Date(2026, 6, 19),
     programEvents: [
       {
         name: 'brideHouse',
-        time: '12:00',
-        locationText: 'Նոր Արեշ, 5րդ փողոց, 14/1',
-        location: 'https://yandex.com/maps/-/CPh5EE6i',
+        time: '11:00',
+        locationText: 'Սերո Խանզադյան 38 (Մամիկ հյուրատուն)',
+        location: 'https://yandex.com/maps/-/CTAZu4~S',
       },
       {
         name: 'church',
-        time: '14:00',
-        place: 'Սուրբ Մարիամ Աստվածածին եկեղեցի',
-        locationText: 'Երևան, Նորք Մարաշ',
-        location: 'https://yandex.com/maps/-/CPh5ET~a',
+        time: '',
+        place: '',
+        locationText: 'Նախատեսված է այլ օր',
+        location: '',
       },
       {
         name: 'party',
-        time: '17:00',
-        place: '«Հրաշք Այգի» ռեստորան',
-        locationText: 'Արարատի մարզ, գ․ Դիտակ',
-        location: 'https://yandex.com/maps/-/CPh5IPzM',
+        time: '17:30',
+        place: '«Ոսկե ծիրան Premium hall»',
+        locationText: 'Արարատի մարզ, ք․ Արտաշատ',
+        location: 'https://yandex.com/maps/-/CTAZ5AZD',
       },
     ],
     infoMessage: 'Սիրով սպասում ենք ձեզ ',
     dressCodeMessage: 'Հանդիսավոր հագուստ առանց սահմանափակումների',
-    phoneNumbers: ['098 390509'],
+    phoneNumbers: ['094 025404', '093 170370'],
   },
 ];
