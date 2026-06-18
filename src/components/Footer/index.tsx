@@ -8,7 +8,7 @@ interface Props {
 
 const Component: React.FC<Props> = ({ data }) => {
   return (
-    <footer className="relative flex flex-col justify-center items-center bg-amber-400 rounded-tl-4xl rounded-tr-4xl z-2 p-5">
+    <footer className="relative flex flex-col justify-center items-center bg-green-400 rounded-tl-4xl rounded-tr-4xl z-2 p-5">
       <p className="text-[20px] text-white text-center mb-3 max-[770px]:text-[18px]">Հարցերի դեպքում կապվեք մեզ հետ՝</p>
       <div className="flex flex-col gap-2">
         {data.phoneNumbers.map(phoneNumber => (
