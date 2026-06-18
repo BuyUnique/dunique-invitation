@@ -28,7 +28,7 @@ export const WEDDING_DATAS: WeddingData[] = [
       {
         name: 'party',
         time: '17:30',
-        place: '«Ոսկե ծիրան Premium hall»',
+        place: '«Ոսկե ծիրան Պրեմիում Հոլ»',
         locationText: 'Արարատի մարզ, ք․ Արտաշատ',
         location: 'https://yandex.com/maps/-/CTAZ5AZD',
       },
