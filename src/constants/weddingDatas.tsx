@@ -16,7 +16,7 @@ export const WEDDING_DATAS: WeddingData[] = [
         name: 'brideHouse',
         time: '11:00',
         locationText: 'Սերո Խանզադյան 38 (Մամիկ հյուրատուն)',
-        location: 'https://yandex.com/maps/-/CTAZu4~S',
+        location: '',
       },
       {
         name: 'church',
