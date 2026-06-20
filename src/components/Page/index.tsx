@@ -64,7 +64,13 @@ const Component: React.FC = () => {
   }
 
   return (
-    <div style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${data.img})` }} className="h-dvh bg-cover bg-center overflow-y-auto scroll-smooth scroll-touch">
+    <div
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${data.img})`,
+        backgroundPosition: data.imgPosition,
+      }}
+      className="h-dvh bg-cover overflow-y-auto scroll-smooth scroll-touch"
+    >
       <Header data={data} onScrollToSectionClick={handleScrollToSectionClick} />
       <div className="relative z-1 after:absolute after:content-[''] after:inset-0 after:bg-black/50 after:rounded-tl-4xl after:rounded-tr-4xl">
         <WeddingDetails data={data} weddingDateSectionRef={weddingDateSectionRef}  />

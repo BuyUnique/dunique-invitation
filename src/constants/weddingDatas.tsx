@@ -1,13 +1,15 @@
 import { type WeddingData } from '../types/models';
 
-import KaroAndQristine from '../assets/images/KaroAndQristine.jpg';
+import karoAndQristine from '../assets/images/KaroAndQristine.jpg';
 import brunoMarsSong from '../assets/audios/Bruno Mars - Merry You.mp3';
 
 export const WEDDING_DATAS: WeddingData[] = [
   {
     id: 'hello-world1234',
-    img: KaroAndQristine,
+    img: karoAndQristine,
+    imgPosition: '50% 50%',
     song: brunoMarsSong,
+    primaryColor: '#00a63d',
     title: 'Կարո և Քրիստինե',
     weddingDateText: '19 Հուլիս 2026',
     weddingDate: new Date(2026, 6, 19),
@@ -16,14 +18,10 @@ export const WEDDING_DATAS: WeddingData[] = [
         name: 'brideHouse',
         time: '11:00',
         locationText: 'Սերո Խանզադյան 38 (Մամիկ հյուրատուն)',
-        location: '',
       },
       {
         name: 'church',
-        time: '',
-        place: '',
         locationText: 'Նախատեսված է այլ օր',
-        location: '',
       },
       {
         name: 'party',

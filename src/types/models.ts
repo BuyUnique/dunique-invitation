@@ -8,18 +8,20 @@ export interface TimeParts {
 export interface WeddingData {
   id: string;
   img: string,
+  imgPosition: string,
   song?: string,
+  primaryColor: string;
   title: string;
   weddingDateText: string;
   weddingDate: Date;
   programEvents: {
     name: 'brideHouse' | 'admission' | 'church' | 'party',
-    time: string;
+    time?: string;
     place?: string;
     locationText: string;
-    location: string;
+    location?: string;
   }[];
   infoMessage?: string;
-  dressCodeMessage: string;
+  dressCodeMessage?: string;
   phoneNumbers: string[];
 }

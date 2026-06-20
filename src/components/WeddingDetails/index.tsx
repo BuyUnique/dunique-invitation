@@ -105,40 +105,44 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
             return (
               <div key={event.name} className="max-w-87.5 min-w-50 flex flex-1/3 flex-col items-center gap-2">
                 <img src={eventImg} alt={imgAltText} className="size-25 object-contain" />
-                <p className="text-[22px] text-center text-white text-shadow-1 max-[770px]:text-[20px]">{eventNameText}</p>
-                <motion.p
-                  className="italic text-[24px] text-white text-shadow-1 mb-2 max-[770px]:text-[22px]"
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-                  viewport={{ once: true, amount: 'all' }}
-                >
-                  {event.time}
-                </motion.p>
+                <p className={clsx("text-[22px] text-center text-white text-shadow-1 max-[770px]:text-[20px]", { 'mb-2': !event.time })}>{eventNameText}</p>
+                {event.time && (
+                  <motion.p
+                    className="italic text-[24px] text-white text-shadow-1 mb-2 max-[770px]:text-[22px]"
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+                    viewport={{ once: true, amount: 'all' }}
+                  >
+                    {event.time}
+                  </motion.p>
+                )}
                 {event.place && <p className="text-[22px] text-center text-white text-shadow-1 max-[770px]:text-[20px]">{event.place}</p>}
                 <p className="text-[22px] text-center  text-white text-shadow-1 max-[770px]:text-[20px]">{event.locationText}</p>
-                <a href={event.location} target="_blank" rel="noopener noreferrer" className="text-[18px] bg-green-600 text-white rounded-3xl transition-all mt-2 p-[6px_18px] hover:bg-white hover:text-black">Ինչպես գնալ</a>
+                {event.location && <a href={event.location} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: data.primaryColor }} className="text-[18px] text-white rounded-3xl transition-all mt-2 p-[6px_18px] hover:bg-white hover:text-black">Ինչպես գնալ</a>}
               </div>
             );
           })}
         </div>
         {data.infoMessage && <InfoMessage className="mb-22 max-[500px]:mb-17" message={data.infoMessage} />}
-        <ArrowDown onClick={handleScrollToDressCodeSectionClick} />
+        <ArrowDown onClick={data.dressCodeMessage ? handleScrollToDressCodeSectionClick : handleScrollToCountdownSectionClick} />
       </div>
-      <div ref={dressCodeSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
-        <motion.h2
-          className="text-[42px] font-medium italic text-white text-shadow-1 mb-8 max-[970px]:text-[32px] max-[770px]:text-[28px]"
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 'all' }}
-        >
-          Դրես կոդ
-        </motion.h2>
-        <InfoMessage className="mb-24 max-[500px]:mb-19" message={data.dressCodeMessage} />
-        <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-18 max-[500px]:mb-13')} />
-        <ArrowDown onClick={handleScrollToCountdownSectionClick} />
-      </div>
+      {data.dressCodeMessage && (
+        <div ref={dressCodeSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
+          <motion.h2
+            className="text-[42px] font-medium italic text-white text-shadow-1 mb-8 max-[970px]:text-[32px] max-[770px]:text-[28px]"
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 'all' }}
+          >
+            Դրես կոդ
+          </motion.h2>
+          <InfoMessage className="mb-24 max-[500px]:mb-19" message={data.dressCodeMessage} />
+          <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-18 max-[500px]:mb-13')} />
+          <ArrowDown onClick={handleScrollToCountdownSectionClick} />
+        </div>
+      )}
       <div ref={countdownSectionRef} className="flex flex-col items-center">
         <motion.h2
           className="text-[42px] font-medium italic text-white text-shadow-1 mb-16 max-[970px]:text-[32px] max-[770px]:text-[28px]"
