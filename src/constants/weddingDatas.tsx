@@ -5,7 +5,7 @@ import brunoMarsSong from '../assets/audios/Bruno Mars - Merry You.mp3';
 
 export const WEDDING_DATAS: WeddingData[] = [
   {
-    id: 'KaroAndQristine',
+    id: 'hello-world1234',
     img: KaroAndQristine,
     song: brunoMarsSong,
     title: 'Կարո և Քրիստինե',
