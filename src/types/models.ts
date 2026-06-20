@@ -8,7 +8,7 @@ export interface TimeParts {
 export interface WeddingData {
   id: string;
   img: string,
-  song: string,
+  song?: string,
   title: string;
   weddingDateText: string;
   weddingDate: Date;
