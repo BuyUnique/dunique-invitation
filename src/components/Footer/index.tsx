@@ -12,7 +12,7 @@ const Component: React.FC<Props> = ({ data }) => {
       <p className="text-[20px] text-white text-center mb-3 max-[770px]:text-[18px]">Հարցերի դեպքում կապվեք մեզ հետ՝</p>
       <div className="flex flex-col gap-2">
         {data.phoneNumbers.map(phoneNumber => (
-          <div className="flex items-center gap-2">
+          <div key={phoneNumber} className="flex items-center gap-2">
             <img src={phoneIcon} alt="Phone" className="size-7 object-contain" />
             <p className="text-[18px] text-white max-[770px]:text-[16px]">{phoneNumber}</p>
           </div>
