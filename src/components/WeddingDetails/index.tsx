@@ -103,24 +103,21 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
             }
 
             return (
-              <div key={event.name} className="max-w-87.5 min-w-50 flex flex-1/3 flex-col items-center gap-2">
+              <motion.div
+                key={event.name}
+                className="max-w-87.5 min-w-50 flex flex-1/3 flex-col items-center gap-2"
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+                viewport={{ once: true, amount: 0.7 }}
+              >
                 <img src={eventImg} alt={imgAltText} className="size-25 object-contain" />
                 <p className={clsx('text-[22px] text-center text-white text-shadow-1 max-[770px]:text-[20px]', { 'mb-2': !event.time })}>{eventNameText}</p>
-                {event.time && (
-                  <motion.p
-                    className="italic text-[24px] text-white text-shadow-1 mb-2 max-[770px]:text-[22px]"
-                    initial={{ opacity: 0, x: -40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-                    viewport={{ once: true, amount: 'all' }}
-                  >
-                    {event.time}
-                  </motion.p>
-                )}
+                {event.time && <p className="italic text-[24px] text-white text-shadow-1 mb-2 max-[770px]:text-[22px]">{event.time}</p>}
                 {event.place && <p className="text-[22px] text-center text-white text-shadow-1 max-[770px]:text-[20px]">{event.place}</p>}
                 <p className="text-[22px] text-center  text-white text-shadow-1 max-[770px]:text-[20px]">{event.locationText}</p>
                 {event.location && <a href={event.location} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: data.primaryColor }} className="text-[18px] text-white rounded-3xl transition-all mt-2 p-[6px_18px] hover:bg-white hover:text-black">Ինչպես գնալ</a>}
-              </div>
+              </motion.div>
             );
           })}
         </div>
