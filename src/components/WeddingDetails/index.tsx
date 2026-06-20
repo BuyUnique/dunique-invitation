@@ -105,7 +105,7 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
             return (
               <div key={event.name} className="max-w-87.5 min-w-50 flex flex-1/3 flex-col items-center gap-2">
                 <img src={eventImg} alt={imgAltText} className="size-25 object-contain" />
-                <p className={clsx("text-[22px] text-center text-white text-shadow-1 max-[770px]:text-[20px]", { 'mb-2': !event.time })}>{eventNameText}</p>
+                <p className={clsx('text-[22px] text-center text-white text-shadow-1 max-[770px]:text-[20px]', { 'mb-2': !event.time })}>{eventNameText}</p>
                 {event.time && (
                   <motion.p
                     className="italic text-[24px] text-white text-shadow-1 mb-2 max-[770px]:text-[22px]"
