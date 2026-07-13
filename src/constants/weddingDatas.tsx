@@ -33,6 +33,7 @@ export const WEDDING_DATAS: WeddingData[] = [
     ],
     infoMessage: 'Սիրով սպասում ենք ձեզ ',
     dressCodeMessage: 'Հանդիսավոր հագուստ առանց սահմանափակումների',
+    telegramGroupLink: 'https://web.telegram.org/a/',
     phoneNumbers: ['094 025404', '093 170370'],
   },
 ];

@@ -23,5 +23,6 @@ export interface WeddingData {
   }[];
   infoMessage?: string;
   dressCodeMessage?: string;
+  telegramGroupLink: string;
   phoneNumbers: string[];
 }

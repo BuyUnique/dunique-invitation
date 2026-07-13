@@ -6,6 +6,7 @@ import heartsWhiteImg from '../../assets/images/hearts-white.png';
 import weddingDressImg from '../../assets/images/wedding-dress.png';
 import ringImg from '../../assets/images/ring.png';
 import champagneGlassesImg from '../../assets/images/champagne-glasses.png';
+import telegramIcon from '../../assets/icons/telegram.png';
 import { ArrowDown } from '../ArrowDown';
 import { useCountdown } from '../../hooks/useCountdown';
 import { type TimeParts, type WeddingData } from '../../types/models';
@@ -23,6 +24,7 @@ interface Props {
 const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
   const weddingProgramSectionRef = useRef<HTMLDivElement>(null);
   const dressCodeSectionRef = useRef<HTMLDivElement>(null);
+  const telegramSectionRef = useRef<HTMLDivElement>(null);
   const countdownSectionRef = useRef<HTMLDivElement>(null);
   const countdown = useCountdown(data.weddingDate);
 
@@ -37,6 +39,12 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
       dressCodeSectionRef.current.scrollIntoView();
     }
   }, [dressCodeSectionRef]);
+
+  const handleScrollToTelegramSectionClick = useCallback(() => {
+    if (telegramSectionRef.current) {
+      telegramSectionRef.current.scrollIntoView();
+    }
+  }, [telegramSectionRef]);
 
   const handleScrollToCountdownSectionClick = useCallback(() => {
     if (countdownSectionRef.current) {
@@ -140,7 +148,7 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
           <ArrowDown onClick={handleScrollToCountdownSectionClick} />
         </div>
       )}
-      <div ref={countdownSectionRef} className="flex flex-col items-center">
+      <div ref={countdownSectionRef} className="flex flex-col items-center mb-22 max-[500px]:mb-17">
         <motion.h2
           className="text-[42px] font-medium italic text-white text-shadow-1 mb-16 max-[970px]:text-[32px] max-[770px]:text-[28px]"
           initial={{ opacity: 0, y: -40 }}
@@ -153,7 +161,7 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
         <img src={heartsWhiteImg} alt="Hearts" className={clsx(HEARTS_WHITE_CLASS_NAME, 'mb-19 max-[500px]:mb-14')} />
         <p className="text-[28px] font-medium text-center text-white text-shadow-1 mb-9.5 max-[970px]:text-[22px] max-[770px]:text-[20px]">Մինչ մեր հարսանիքը մնացել է</p>
         <motion.div
-          className="flex flex-wrap justify-center gap-4 max-[770px]:gap-1.5 mb-23 max-[500px]:mb-18"
+          className="flex flex-wrap justify-center gap-4 max-[770px]:gap-1.5 mb-22 max-[500px]:mb-17"
           variants={{
             hidden: {
               opacity: 0,
@@ -211,6 +219,32 @@ const Component: React.FC<Props> = ({ data, weddingDateSectionRef }) => {
             );
           })}
         </motion.div>
+        <ArrowDown onClick={handleScrollToTelegramSectionClick} />
+      </div>
+      <div ref={telegramSectionRef} className="flex flex-col items-center">
+        <motion.h2
+          className="text-[42px] font-medium italic text-center text-white text-shadow-1 mb-16 max-[970px]:text-[32px] max-[770px]:text-[28px]"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 'all' }}
+        >
+          Խնդրում ենք հաստատել Ձեր ներկայությունը
+        </motion.h2>
+        <motion.a
+          style={{ backgroundColor: data.primaryColor }}
+          className="text-[18px] text-center text-white rounded-3xl transition-all p-[6px_18px] mb-19 hover:bg-white hover:text-black max-[500px]:mb-14"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 'all' }}
+          href={data.telegramGroupLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={telegramIcon} alt="Telegram" className="inline w-8 h-8 mr-2" />
+          Միացեք Telegram-ի խմբին
+        </motion.a>
         <img src={heartsWhiteImg} alt="Hearts" className={HEARTS_WHITE_CLASS_NAME} />
       </div>
     </div>
