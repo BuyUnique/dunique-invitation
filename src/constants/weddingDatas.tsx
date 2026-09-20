@@ -1,12 +1,12 @@
 import { type WeddingData } from '../types/models';
 
-import karoAndQristine from '../assets/images/KaroAndQristine.jpg';
+import LiannaAndDavit from '../assets/images/'LiannaAndDavit.jpg';
 import brunoMarsSong from '../assets/audios/Bruno Mars - Merry You.mp3';
 
 export const WEDDING_DATAS: WeddingData[] = [
   {
-    id: 'hello-world1234',
-    img: karoAndQristine,
+    id: 'LiannaAndDavit',
+    img: LiannaAndDavit,
     imgPosition: '50% 50%',
     song: brunoMarsSong,
     primaryColor: '#00a63d',
