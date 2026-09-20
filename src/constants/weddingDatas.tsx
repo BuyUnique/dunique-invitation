@@ -7,7 +7,7 @@ export const WEDDING_DATAS: WeddingData[] = [
   {
     id: 'LiannaAndDavit',
     img: LiannaAndDavit,
-    imgPosition: '50% 50%',
+    imgPosition: '30 50%',
     song: brunoMarsSong,
     primaryColor: '#00a63d',
     title: 'Լիաննա և Դավիթ',
