@@ -1,6 +1,6 @@
 import { type WeddingData } from '../types/models';
 
-import LiannaAndDavit from '../assets/images/'LiannaAndDavit.jpg';
+import LiannaAndDavit from '../assets/images/LiannaAndDavit.jpg';
 import brunoMarsSong from '../assets/audios/Bruno Mars - Merry You.mp3';
 
 export const WEDDING_DATAS: WeddingData[] = [
