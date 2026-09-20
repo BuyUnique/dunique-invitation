@@ -10,9 +10,9 @@ export const WEDDING_DATAS: WeddingData[] = [
     imgPosition: '50% 50%',
     song: brunoMarsSong,
     primaryColor: '#00a63d',
-    title: 'Կարո և Քրիստինե',
-    weddingDateText: '19 Հուլիս 2026',
-    weddingDate: new Date(2026, 6, 19),
+    title: 'Լիաննա և Դավիթ',
+    weddingDateText: '16 հոկտեմբեր 2026',
+    weddingDate: new Date(2026, 9, 16),
     programEvents: [
       {
         name: 'brideHouse',
